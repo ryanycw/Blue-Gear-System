@@ -18,6 +18,9 @@
 [使用 React 和 Django REST Framework 构建你的网站](https://zhuanlan.zhihu.com/p/33546988)<br/>
 
 ### Work with JWT in DRF
+[Django Rest Framework — Creating a Simple API in 15mins With DRF](https://medium.com/swlh/django-rest-framework-creating-a-simple-api-in-15mins-with-drf-5e051ee531dd)<br/>
+[Django Rest Framework — CRUD With DRF](https://medium.com/swlh/django-rest-framework-crud-with-drf-9a8756095c73)</br>
+[Django CRUD Application](https://medium.com/swlh/django-crud-application-postgresql-97c62d42eb38)</br>
 [Django Rest Framework —JWT Auth with DRF](https://medium.com/python-in-plain-english/django-rest-framework-jwt-auth-with-drf-e13ccde9e68f)<br/>
 
 ### npm Install Guide
