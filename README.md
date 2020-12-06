@@ -5,6 +5,7 @@
 ### React + DRF Tutorial
 [110% Complete JWT Authentication with Django & React - 2020](https://hackernoon.com/110percent-complete-jwt-authentication-with-django-and-react-2020-iejq34ta)<br/>
 [Create React App](https://reactjs.org/docs/create-a-new-react-app.html)<br/>
+[React JS and DRF — Introduction to React JS and Creating a hello world app with React JS](https://medium.com/@sjlouji10/react-js-and-drf-introduction-to-react-js-and-creating-a-hello-world-app-with-react-js-24d56e9d2a14)</br>
 [Simple Integrate React and Django](https://medium.com/georges-note-idea/full-stack-django-and-react-js-%E6%95%B4%E5%90%88-587b9b9cd0b2)<br/>
 [Install npm and npx](https://nodejs.org/en/)<br/>
 [Enable Login with Email in Django](https://rahmanfadhil.com/django-login-with-email/)<br/>
@@ -22,6 +23,18 @@
 [Django Rest Framework — CRUD With DRF](https://medium.com/swlh/django-rest-framework-crud-with-drf-9a8756095c73)</br>
 [Django CRUD Application](https://medium.com/swlh/django-crud-application-postgresql-97c62d42eb38)</br>
 [Django Rest Framework —JWT Auth with DRF](https://medium.com/python-in-plain-english/django-rest-framework-jwt-auth-with-drf-e13ccde9e68f)<br/>
+[Django Rest Framework — JWT auth with Login and Register](https://medium.com/python-in-plain-english/django-rest-framework-jwt-auth-with-login-and-register-77f830cd8789)</br>
+
+### Work with React JS
+[React JS and DRF- Routing with React JS](https://medium.com/@sjlouji10/react-js-and-drf-routing-with-react-js-3349ffd7b25a)</br>
+[React JS and DRF- Creating a simple CRUD Form with Bootstrap](https://medium.com/@sjlouji10/react-js-and-drf-creating-a-simple-crud-form-with-bootstrap-b682b7290a81)</br>
+[React JS and DRF — JWT Login and Register](https://medium.com/@sjlouji10/react-js-and-drf-jwt-login-and-register-1998d5db8c50)</br>
+[React TypeError: Cannot read property 'setState' of undefined](https://forum.freecodecamp.org/t/react-question-cannot-read-property-setstate-of-undefined/69620/11)</br>
+[Redirection using Axios and React](https://stackoverflow.com/questions/53900739/redirection-using-axios-and-react)</br>
+[Arrow functions in React](https://oleg008.medium.com/arrow-functions-in-react-f782d11460b4)</br>
+
+### Solve CORS Problem
+[How to Fix Django CORS Error](https://dzone.com/articles/how-to-fix-django-cors-error)
 
 ### npm Install Guide
 [npm install bootstrap and reactstrap](https://www.npmjs.com/package/reactstrap)<br/>
