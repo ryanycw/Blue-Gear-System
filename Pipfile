@@ -12,6 +12,8 @@ django-cors-headers = "*"
 djangorestframework-simplejwt = "*"
 markdown = "*"
 django-filter = "*"
+phonenumbers = "*"
+django-phonenumber-field = "*"
 
 [requires]
 python_version = "3.8"
