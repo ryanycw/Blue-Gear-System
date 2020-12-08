@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { Form, Button, Container } from 'react-bootstrap'
+import { Redirect } from 'react-router-dom'
+import { Form, Button, Container, Col } from 'react-bootstrap'
 const axios = require('axios')
 
 export default class Register extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -10,6 +12,7 @@ export default class Register extends Component {
           last_name: '',
           email: '',
           password: '',
+          isSignedUp: false, // <-- initialize the signup state as false
         };
         this.onChange = this.onChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,32 +31,41 @@ export default class Register extends Component {
             password: this.state.password,
             first_name: this.state.first_name,
             last_name: this.state.last_name
-        }).then(function (res){
+        }).then((res) => {
             console.log(res)
-            localStorage.setItem('token', res.data.access);
-            localStorage.setItem('user', res.config.data);
+            /*localStorage.setItem('token', res.data.access);
+            localStorage.setItem('user', res.config.data);*/
+            if (res.status === 200) {
+                this.setState({ isSignedUp: true }); // after signing up, set the state to true. This will trigger a re-render
+            }
         }).catch(function (err){
             console.log(err)
         })
         event.preventDefault();
     }
     render() {
+        if (this.state.isSignedUp) {
+            // redirect to home if signed up
+            return <Redirect to = '/login'/>;
+        }
         return (
-            <Container style={{ marginTop: '100px' }}>
+            <Container style={{ marginTop: '100px',}}>
                 <Form>
-                    <Form.Group controlId="formBasicEmail" style={{ width: '300px' }}>
+                    <Form.Row>
+                    <Form.Group as={Col} xs="3" controlId="formBasicEmail">
                         <Form.Label>First name</Form.Label>
                         <Form.Control type="text" placeholder="Enter First Name" name="first_name" value={this.state.first_name} onChange={this.onChange}/>
                     </Form.Group>
-                    <Form.Group controlId="formBasicEmail" style={{ width: '300px' }}>
+                    <Form.Group as={Col} xs="3" controlId="formBasicEmail">
                         <Form.Label>Last Name</Form.Label>
                         <Form.Control type="text" placeholder="Enter Last Name" name="last_name" value={this.state.last_name} onChange={this.onChange}/>
                     </Form.Group>
-                    <Form.Group controlId="formBasicEmail" style={{ width: '300px' }}>
+                    </Form.Row>
+                    <Form.Group as={Col} xs="6" controlId="formBasicEmail">
                         <Form.Label>Username</Form.Label>
                         <Form.Control type="text" placeholder="Enter username" name="email" value={this.state.email} onChange={this.onChange}/>
                     </Form.Group>
-                    <Form.Group controlId="formBasicPassword" style={{ width: '300px' }}>
+                    <Form.Group as={Col} xs="6" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" placeholder="Password" name="password" value={this.state.password} onChange={this.onChange}/>
                     </Form.Group>

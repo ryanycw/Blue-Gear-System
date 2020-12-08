@@ -46,11 +46,11 @@ export default class Login extends Component {
         return (
             <Container style={{ marginTop: '100px' }}>
                 <Form>
-                    <Form.Group controlId="formBasicEmail" style={{ width: '300px' }}>
+                    <Form.Group controlId="formBasicUsername" style={{ width: '300px' }}>
                         <Form.Label>Username</Form.Label>
                         <Form.Control type="text" placeholder="Username" name="username" value={this.state.username} onChange={this.onChange}/>
                         <Form.Text className="text-muted">
-                        
+                            
                         </Form.Text>
                     </Form.Group>
 
@@ -58,9 +58,9 @@ export default class Login extends Component {
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" placeholder="Password" name="password" value={this.state.password} onChange={this.onChange}/>
                     </Form.Group>
-                    <Form.Group controlId="formBasicCheckbox">
+                    {/*<Form.Group controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group>
+                    </Form.Group>*/}
                     <Button variant="primary" type="submit" onClick={this.handleSubmit}>
                         Login
                     </Button>
