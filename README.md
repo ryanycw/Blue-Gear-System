@@ -24,6 +24,7 @@
 [Django CRUD Application](https://medium.com/swlh/django-crud-application-postgresql-97c62d42eb38)</br>
 [Django Rest Framework —JWT Auth with DRF](https://medium.com/python-in-plain-english/django-rest-framework-jwt-auth-with-drf-e13ccde9e68f)<br/>
 [Django Rest Framework — JWT auth with Login and Register](https://medium.com/python-in-plain-english/django-rest-framework-jwt-auth-with-login-and-register-77f830cd8789)</br>
+[Django REST Framework — Parse Nested JSON and projecting API with permissions](https://medium.com/python-in-plain-english/django-rest-framework-parse-nested-json-and-projecting-api-with-permissions-16639ed2686d)</br>
 
 ### Work with React JS
 [React JS and DRF- Routing with React JS](https://medium.com/@sjlouji10/react-js-and-drf-routing-with-react-js-3349ffd7b25a)</br>
@@ -40,3 +41,8 @@
 [npm install bootstrap and reactstrap](https://www.npmjs.com/package/reactstrap)<br/>
 [npm install with version](https://docs.npmjs.com/cli/v6/commands/npm-install)<br/>
 [npm install multiple version](https://reactgo.com/npm-install-same-package-multiple-versions/)<br/>
+
+### Phone Field in Django
+[What's the best way to store Phone number in Django models](https://stackoverflow.com/questions/19130942/whats-the-best-way-to-store-phone-number-in-django-models)</br>
+[django-phonenumber-field](https://github.com/stefanfoulis/django-phonenumber-field)</br>
+[Can not install `django-phonenumber-field` properly with `pipenv`](https://github.com/stefanfoulis/django-phonenumber-field/issues/200)
