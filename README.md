@@ -18,13 +18,14 @@
 [實作前後端分離下的第三方登入](https://blog.hanklu.tw/post/2020/spa-api-social-loign/)<br/>
 [使用 React 和 Django REST Framework 构建你的网站](https://zhuanlan.zhihu.com/p/33546988)<br/>
 
-### Work with JWT in DRF
+### Work with Django REST Framework
 [Django Rest Framework — Creating a Simple API in 15mins With DRF](https://medium.com/swlh/django-rest-framework-creating-a-simple-api-in-15mins-with-drf-5e051ee531dd)<br/>
 [Django Rest Framework — CRUD With DRF](https://medium.com/swlh/django-rest-framework-crud-with-drf-9a8756095c73)</br>
 [Django CRUD Application](https://medium.com/swlh/django-crud-application-postgresql-97c62d42eb38)</br>
 [Django Rest Framework —JWT Auth with DRF](https://medium.com/python-in-plain-english/django-rest-framework-jwt-auth-with-drf-e13ccde9e68f)<br/>
 [Django Rest Framework — JWT auth with Login and Register](https://medium.com/python-in-plain-english/django-rest-framework-jwt-auth-with-login-and-register-77f830cd8789)</br>
 [Django REST Framework — Parse Nested JSON and projecting API with permissions](https://medium.com/python-in-plain-english/django-rest-framework-parse-nested-json-and-projecting-api-with-permissions-16639ed2686d)</br>
+[DRF Permissions](https://www.django-rest-framework.org/api-guide/permissions/#isauthenticated)</br>
 
 ### Work with React JS
 [React JS and DRF- Routing with React JS](https://medium.com/@sjlouji10/react-js-and-drf-routing-with-react-js-3349ffd7b25a)</br>
@@ -46,3 +47,9 @@
 [What's the best way to store Phone number in Django models](https://stackoverflow.com/questions/19130942/whats-the-best-way-to-store-phone-number-in-django-models)</br>
 [django-phonenumber-field](https://github.com/stefanfoulis/django-phonenumber-field)</br>
 [Can not install `django-phonenumber-field` properly with `pipenv`](https://github.com/stefanfoulis/django-phonenumber-field/issues/200)
+
+### Todo
+12/19</br>
+1. Profile 自動填入 Username
+2. 建另一個 API, 分別用兩個 API 去改會員資料與帳戶資料
+3. 另外有改密碼的地方
