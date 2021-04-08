@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { Form, Button, Container, Col } from 'react-bootstrap'
+
+import "./components/css/Register.scss"
 const axios = require('axios')
+
 
 export default class Register extends Component {
 
@@ -49,31 +52,26 @@ export default class Register extends Component {
             return <Redirect to = '/login'/>;
         }
         return (
-            <Container style={{ marginTop: '100px',}}>
-                <Form>
-                    <Form.Row>
-                    <Form.Group as={Col} xs="3" controlId="formBasicEmail">
-                        <Form.Label>First name</Form.Label>
-                        <Form.Control type="text" placeholder="Enter First Name" name="first_name" value={this.state.first_name} onChange={this.onChange}/>
-                    </Form.Group>
-                    <Form.Group as={Col} xs="3" controlId="formBasicEmail">
-                        <Form.Label>Last Name</Form.Label>
-                        <Form.Control type="text" placeholder="Enter Last Name" name="last_name" value={this.state.last_name} onChange={this.onChange}/>
-                    </Form.Group>
-                    </Form.Row>
-                    <Form.Group as={Col} xs="6" controlId="formBasicEmail">
-                        <Form.Label>Username</Form.Label>
-                        <Form.Control type="text" placeholder="Enter username" name="email" value={this.state.email} onChange={this.onChange}/>
-                    </Form.Group>
-                    <Form.Group as={Col} xs="6" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" name="password" value={this.state.password} onChange={this.onChange}/>
-                    </Form.Group>
-                    <Button variant="primary" type="submit" onClick={this.handleSubmit}>
-                        Register
-                    </Button>
-                </Form>
-            </Container>
+            <div className="reg-container">
+                <h3>Register</h3>
+                <div className="row">
+                    <label>First name</label>
+                    <input type="text" name="first_name" placeholder="Enter First Name" value={this.state.first_name} onChange={this.onChange}/>
+                </div>
+                <div className="row">
+                    <label>Last name</label>
+                    <input type="text" name="last_name" placeholder="Enter Last Name" value={this.state.last_name} onChange={this.onChange}/>
+                </div>
+                <div className="row">
+                    <label>Username</label>
+                    <input type="text" name="email" placeholder="Enter username" value={this.state.email} onChange={this.onChange}/>
+                </div>
+                <div className="row">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.onChange}/>
+                </div>
+                <input type="submit" className="primary-btn" value="register" onClick={this.handleSubmit}/>
+            </div>
         )
     }
 }

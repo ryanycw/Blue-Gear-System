@@ -1,0 +1,95 @@
+@import './main';
+@import './Navbar';
+
+.container{
+    position: relative;
+
+    .left-col{
+        text-align: center;
+        justify-self: center;
+        align-self: center;
+        padding:20%;
+        h3{
+            font-size: 22px;
+        }
+        form{
+            margin-top: 3em;
+        }
+        label{
+            align-self: center;
+            display: block;
+            font-size: 16px;
+            margin-bottom: 0.5em;
+        }
+        .btn-row{
+            margin-top: 3em;
+        }
+        input,textarea{
+            width: 80%;
+            padding: 0.8em;
+            margin-bottom: 1em;
+            border-radius: 1em;
+            border: 1px solid #ECECEC;
+            box-sizing: border-box;
+            outline: none;
+        }
+        .primary-btn{
+            background: var(--primary-color);
+            color:white;
+            outline:none;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: .4em .3em;
+            border-radius: .7em;
+            border:3px solid var(--primary-color);
+            &:hover{
+                color: var(--primary-color);
+                background-color: white;
+                border:3px solid var(--primary-color);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:768px){
+    h3{
+        font-size: 30px !important;
+    }
+    label{
+        display: block;
+        font-size: 18px !important;
+        margin-bottom: 0.5em;
+    }
+    .row{
+        display:grid;
+        grid-template-columns: 40% auto;
+    }
+    .btn-row{
+        display:grid;
+        grid-template-columns: 40% 40%;
+        justify-content:center !important;
+        align-self:center;
+    }
+    .primary-btn{
+        font-size:18px !important;
+        justify-self:center !important;
+        align-self:center !important;
+    }
+}
+
+@media only screen and (min-width:1024px){
+    .container{
+        display: grid;
+        grid-template-columns: 55% auto;
+    }
+    .right-col{
+        width:100%;
+        background-color: #ECECEC;
+    }
+    .left-col{
+        width:100%;
+    }
+    
+    
+}

@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { Form, Button, Container } from 'react-bootstrap'
+
+import enter from "./components/css/img/enter.svg"
+import "./components/css/Login.scss"
+
 const axios = require('axios')
 
 export default class Login extends Component {
@@ -44,28 +48,28 @@ export default class Login extends Component {
             return <Redirect to = '/'/>;
         }
         return (
-            <Container style={{ marginTop: '100px' }}>
-                <Form>
-                    <Form.Group controlId="formBasicUsername" style={{ width: '300px' }}>
-                        <Form.Label>Username</Form.Label>
-                        <Form.Control type="text" placeholder="Username" name="username" value={this.state.username} onChange={this.onChange}/>
-                        <Form.Text className="text-muted">
-                            
-                        </Form.Text>
-                    </Form.Group>
+            <div className="container">
+                <div className="left-col">
+                    <h3>Sign In</h3>
+                    <form action="">
+                        <div className="row">
+                            <label>Account</label>
+                            <input type="text" name="username" placeholder="E-mail / Phone Number" value={this.state.username} onChange={this.onChange}/>
+                        </div>
+                        
+                        <div className="row">
+                            <label>Password</label>
+                            <input type="password" id="password" name="password" value={this.state.password} onChange={this.onChange}/>
+                        </div>
 
-                    <Form.Group controlId="formBasicPassword" style={{ width: '300px' }}>
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" name="password" value={this.state.password} onChange={this.onChange}/>
-                    </Form.Group>
-                    {/*<Form.Group controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group>*/}
-                    <Button variant="primary" type="submit" onClick={this.handleSubmit}>
-                        Login
-                    </Button>
-                </Form>
-            </Container>
+                        <div className="btn-row">
+                            <input type="button" className="primary-btn" id="login" value="log in" onClick={this.handleSubmit}/>
+                            <input type="button" className="primary-btn" id="register" value="register"/>
+                        </div>
+                    </form>
+                </div>
+                <div className="right-col"></div>
+            </div>
         )
     }
 }
