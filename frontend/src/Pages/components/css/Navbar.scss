@@ -13,12 +13,40 @@ a{
         font-weight: bold;
     }
 }
-
+.easy-nav-bar{
+    background-color: transparent;
+    padding: 1em 3em;
+    font-family: var(--primary-font);
+    top:0;
+    left:0;
+    .logo{
+        display: flex;
+        align-items: center;
+        .logo-pic{
+            width: 2em;
+            height: 2em;
+            margin-right:0.5em;
+        }
+    
+        .logo-words{
+            text-decoration: none;
+            font-family: Comfortaa;
+            font-weight: 700;
+            font-size: 1.2em;
+            color: var(--primary-color);
+        }
+    }
+}
 .nav-bar{
     padding: 1em 3em;
     font-family: var(--primary-font);
-
-    .container{
+    //position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    background-color: white;
+    z-index: 999;
+    .nav-container{
         display: flex;
         place-content: space-between;
         align-items: center;
@@ -47,6 +75,20 @@ a{
         height: 1.5em;
     }
 
+    .nav-bar #avatar{
+        justify-self: right;
+        svg{
+            width: 2em;
+            height: 2em;
+            padding: .1em;
+            border: 3px solid white;
+            border-radius: 50%;
+            &:hover{
+                border: 3px solid #ECECEC;
+            }
+        }
+    }
+
     nav{
         display: none;
     }
@@ -56,7 +98,7 @@ a{
     .mobile-menu{
         display:none;
     }
-    .nav-bar .container{
+    .nav-bar .nav-container{
         display: grid;
         grid-template-columns: 180px auto 180px;
         justify-content: unset;
@@ -80,7 +122,6 @@ a{
             }
         }
     }
-   
     .nav-bar #avatar{
         justify-self: right;
         svg{
@@ -94,5 +135,26 @@ a{
             }
         }
     }
+   
 }
 
+.accountcard{
+    padding: 1em 1em;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    display:block;
+    position: fixed;
+    z-index: 999;
+    width: 5em;
+    height: auto;
+    right: 3em;
+    top: 4em;
+    background-color: white;
+    border-radius: 5px;
+    border: solid .1px #ECECEC;
+    li{
+        list-style: none;
+        margin:.5em;
+    }
+
+}

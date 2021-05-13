@@ -3,10 +3,16 @@
 
 :root{
     --primary-color:#05294B;
+    --primary-spacing: 2px;
+    --logo-font:Comfortaa;
+    --primary-font:Roboto;
 }
 
-body{
+html, body{
     margin: 0;
     font-family: Roboto;
+    letter-spacing: var(--primary-spacing);
+    max-width: 100%;
+    overflow-x: hidden;
 }
 

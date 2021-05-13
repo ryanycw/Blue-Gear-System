@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { Form, Button, Container } from 'react-bootstrap'
+import RTGear from "./components/RotateTransmitGear"
+import ogb from "./components/css/img/gear_blue.svg"
+import ogy from "./components/css/img/gear_logo_gold.svg"
+import ogg from "./components/css/img/gear_gray.svg"
+
 
 import enter from "./components/css/img/enter.svg"
 import "./components/css/Login.scss"
-
 const axios = require('axios')
 
 export default class Login extends Component {
@@ -16,6 +20,7 @@ export default class Login extends Component {
           password: '',
           isSignedUp: false, // <-- initialize the signup state as false
         };
+        this.globalAccountChange = props.accountHandler;
         this.onChange = this.onChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -34,6 +39,7 @@ export default class Login extends Component {
             localStorage.setItem('user', res.config.data);
             if (res.status === 200) {
                 this.setState({ isSignedUp: true }); // after signing up, set the state to true. This will trigger a re-render
+                this.globalAccountChange(true,this.state.username)
             }
         }).catch(function (err){
             console.log(err)
@@ -49,7 +55,10 @@ export default class Login extends Component {
         }
         return (
             <div className="container">
-                <div className="left-col">
+                <RTGear sz={800} src={ogb} top={0} left={28} dir={-1}/>
+                <RTGear sz={300} src={ogy} top={6} left={20} dir={1}/>
+                <RTGear sz={500} src={ogg} top={40} left={62} dir={1}/>
+                <div className="form">
                     <h3>Sign In</h3>
                     <form action="">
                         <div className="row">
@@ -68,7 +77,6 @@ export default class Login extends Component {
                         </div>
                     </form>
                 </div>
-                <div className="right-col"></div>
             </div>
         )
     }

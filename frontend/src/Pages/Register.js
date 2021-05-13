@@ -52,6 +52,7 @@ export default class Register extends Component {
             return <Redirect to = '/login'/>;
         }
         return (
+            
             <div className="reg-container">
                 <h3>Register</h3>
                 <div className="row">
