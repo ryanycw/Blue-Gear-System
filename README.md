@@ -2,6 +2,9 @@
 
 ## Reference
 
+### Models
+[Django File Upload and Rename](https://stackoverflow.com/questions/25652809/django-file-upload-and-rename)</br>
+
 ### React + DRF Tutorial
 [110% Complete JWT Authentication with Django & React - 2020](https://hackernoon.com/110percent-complete-jwt-authentication-with-django-and-react-2020-iejq34ta)<br/>
 [Create React App](https://reactjs.org/docs/create-a-new-react-app.html)<br/>
