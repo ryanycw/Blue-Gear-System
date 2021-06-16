@@ -43,6 +43,7 @@ export default class Login extends Component {
             }
         }).catch(function (err){
             console.log(err)
+            alert(err)
         })
         event.preventDefault();
     }
@@ -55,25 +56,24 @@ export default class Login extends Component {
         }
         return (
             <div className="container">
-                <RTGear sz={800} src={ogb} top={0} left={28} dir={-1}/>
-                <RTGear sz={300} src={ogy} top={6} left={20} dir={1}/>
-                <RTGear sz={500} src={ogg} top={40} left={62} dir={1}/>
+                <RTGear className={"blue_gear"} src={ogb} dir={-1}/>
+                <RTGear className={"yellow_gear"} src={ogy} dir={-1}/>
+                <RTGear className={"grey_gear"} src={ogg} dir={1}/>
                 <div className="form">
                     <h3>Sign In</h3>
                     <form action="">
                         <div className="row">
                             <label>Account</label>
-                            <input type="text" name="username" placeholder="E-mail / Phone Number" value={this.state.username} onChange={this.onChange}/>
+                            <input type="text" name="username" placeholder="E-mail / Phone Number" value={this.state.username} onChange={this.onChange} onKeyDown={(e)=>{if(e.key==="Enter"){this.handleSubmit(e)}}}/>
                         </div>
                         
                         <div className="row">
                             <label>Password</label>
-                            <input type="password" id="password" name="password" value={this.state.password} onChange={this.onChange}/>
+                            <input type="password" id="password" name="password" value={this.state.password} onChange={this.onChange} onKeyDown={(e)=>{if(e.key==="Enter"){this.handleSubmit(e)}}}/>
                         </div>
 
                         <div className="btn-row">
                             <input type="button" className="primary-btn" id="login" value="log in" onClick={this.handleSubmit}/>
-                            <input type="button" className="primary-btn" id="register" value="register"/>
                         </div>
                     </form>
                 </div>

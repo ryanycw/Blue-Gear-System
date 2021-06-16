@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { ThemeProvider } from "react-bootstrap";
 import gear from "./css/img/SVG/Asset 10.svg"
 import "./css/RTGear.scss"
 
@@ -42,7 +43,8 @@ export default class RTGear extends Component{
                 //height:`${this.props.sz}em`,
                 //top:`${this.props.top}%`,
                 //left:`${this.props.left}%`,
-                transform: `rotateZ(${this.state.cursorX*0.03*this.props.dir}deg) scale(${this.state.cursorY*0.00005+1})`,
+                //scale(${this.state.cursorY*0.00005+1})
+                transform: `rotateZ(${(this.state.cursorX-this.state.cursorY)*0.05*this.props.dir}deg) `,
                 transition: `transform 1s`,
             }}
           />  

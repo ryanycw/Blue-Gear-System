@@ -1,9 +1,7 @@
 import { Component } from "react";
 import { Redirect, useHistory } from 'react-router-dom'
 import RTGear from "./components/RotateTransmitGear"
-import ogb from "./components/css/img/gear_yel.svg"
-import ogy from "./components/css/img/gear_logo_blue.svg"
-import ogg from "./components/css/img/gear_gray.svg"
+import ogb from "./components/css/img/gear_logo_blue.svg"
 
 import "./components/css/Landing.scss"
 import { ThemeProvider } from "react-bootstrap";
@@ -49,9 +47,7 @@ export default class Landing extends Component {
                         <input type="button" className="primary-btn register-btn" value="login" onClick={this.onLoginClick} />
                     </div>
                     <div className="vertical">Lerom Law Firm was founded in Toronto</div>
-                    <RTGear className={"yellow_gear"} src={ogb} dir={-1} />
-                    <RTGear className={"blue_gear"} src={ogy} dir={1} />
-                    <RTGear className={"gray_gear"} src={ogg} dir={1} />
+                    <RTGear className={"blue_gear"} src={ogb} dir={1} />
                 </div>
             )
         }
