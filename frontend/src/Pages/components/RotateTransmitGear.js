@@ -36,13 +36,12 @@ export default class RTGear extends Component{
     render(){
         return(
           <img src={this.props.src} alt="gear pic"
-            className="gear"
+            className={"gear"+" "+this.props.className}
             style={{
-                width: `${this.props.sz}px`,
-                height:`${this.props.sz}px`,
-                position: `absolute`,
-                top:`${this.props.top}%`,
-                left:`${this.props.left}%`,
+                //width: `${this.props.sz}em`,
+                //height:`${this.props.sz}em`,
+                //top:`${this.props.top}%`,
+                //left:`${this.props.left}%`,
                 transform: `rotateZ(${this.state.cursorX*0.03*this.props.dir}deg) scale(${this.state.cursorY*0.00005+1})`,
                 transition: `transform 1s`,
             }}

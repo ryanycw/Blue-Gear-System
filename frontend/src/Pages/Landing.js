@@ -1,31 +1,59 @@
 import { Component } from "react";
-import { Container } from "react-bootstrap";
+import { Redirect, useHistory } from 'react-router-dom'
 import RTGear from "./components/RotateTransmitGear"
-import ogb from "./components/css/img/gear_blue.svg"
-import ogy from "./components/css/img/gear_logo_gold.svg"
+import ogb from "./components/css/img/gear_yel.svg"
+import ogy from "./components/css/img/gear_logo_blue.svg"
 import ogg from "./components/css/img/gear_gray.svg"
 
 import "./components/css/Landing.scss"
+import { ThemeProvider } from "react-bootstrap";
 
-export default class Landing extends Component{
-    constructor(props){
+export default class Landing extends Component {
+    constructor(props) {
         super(props)
+        this.state = {'redirect':false,}
+        this.onRegisterClick = this.onRegisterClick.bind(this)
+        this.onLoginClick = this.onLoginClick.bind(this)
     }
-    
-    render(){
-        return (
-            <div className="hero-container">
-                <div className="header">
-                    <div className="h3">Blue Gear</div>
-                    <div className="p">blablablablablablablablablablablablablablablablabla</div>
-                </div>
-                <input type="button" className="primary-btn" value="register"/>
-                <input type="button" classname="primary-btn" value="login"/>
-                <div className="vertical">Lerom Law Firm was founded in Toronto</div>
-                <RTGear className="moving_gear" sz={800} src={ogb} top={0} left={28} dir={-1}/>
-                <RTGear className="moving_gear gear_logogold" sz={300} src={ogy} top={6} left={20} dir={1}/>
-                <RTGear className="moving_gear gear_gray"sz={500} src={ogg} top={40} left={62} dir={1}/>
-            </div>
+
+    onRegisterClick = () => {
+        this.setState(
+            {
+                'redirect':true,
+                'redirectpath':"/register"
+            }
         )
+    }
+
+    onLoginClick = () => {
+        this.setState(
+            {
+                'redirect':true,
+                'redirectpath':"/login"
+            }
+        )
+    }
+
+    render() {
+        if (this.state.redirect)
+            return <Redirect to={this.state.redirectpath} />
+        else {
+            return (
+                <div className="hero-container">
+                    <div className="header">
+                        <div className="h3">Blue Gear</div>
+                        <div className="p">藍齒輪計畫</div>
+                    </div>
+                    <div className="button-group">
+                        <input type="button" className="primary-btn login-btn" value="register" onClick={this.onRegisterClick} />
+                        <input type="button" className="primary-btn register-btn" value="login" onClick={this.onLoginClick} />
+                    </div>
+                    <div className="vertical">Lerom Law Firm was founded in Toronto</div>
+                    <RTGear className={"yellow_gear"} src={ogb} dir={-1} />
+                    <RTGear className={"blue_gear"} src={ogy} dir={1} />
+                    <RTGear className={"gray_gear"} src={ogg} dir={1} />
+                </div>
+            )
+        }
     }
 }

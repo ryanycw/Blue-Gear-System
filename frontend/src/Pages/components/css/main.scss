@@ -6,6 +6,7 @@
     --primary-spacing: 2px;
     --logo-font:Comfortaa;
     --primary-font:Roboto;
+    --primary-btn:primary-btn;
 }
 
 html, body{
@@ -15,4 +16,24 @@ html, body{
     max-width: 100%;
     overflow-x: hidden;
 }
+
+.primary-btn{
+    background: var(--primary-color);
+    color:white;
+    outline:none;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    padding: .4em .5em;
+    border-radius: 1em;
+    border:3px solid white;
+    &:hover{
+        color: black;
+        background-color: white;
+        border:3px solid white;
+    }
+}
+
+
 

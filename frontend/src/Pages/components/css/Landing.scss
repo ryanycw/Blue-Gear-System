@@ -1,7 +1,7 @@
 @import "./main.scss";
 .hero-container{
     height: 100vh;
-    padding: 5em 2em 2em 2em;
+    padding:8em 2em 2em 2em;
     .header{
         text-align: center;
         .h3{
@@ -11,10 +11,48 @@
             font-weight: 700;
         }
         .p{
-            display:block;
-        }
-        .moving_gear{
             display:none;
-        }
+        }  
+    }
+    /*.button-group{
+        display: block;
+        place-content: space-between;
+        text-align: center;
+        align-self: center;
+    }*/
+    .login-btn,.register-btn{
+        width:60%;
+        //padding: auto;
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top: 1.5em;
+    }
+    .vertical{
+        display:none;
+    }
+    .blue_gear{
+        width: 30em;
+        height: 30em;
+        top: 40%;
+        left: 40%;  
+    }
+    .yellow_gear{
+        display: none;
+    }
+    .gray_gear{
+        //width: 30em;
+        //height: 30em;
+        //top: 30%;
+        //left: 50%;
+        display:none;
+    }
+}
+
+
+
+@media only screen and (min-width:768px) {
+    .blue_gear{
+        display:none !important;
     }
 }

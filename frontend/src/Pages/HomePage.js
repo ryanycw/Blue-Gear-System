@@ -6,7 +6,7 @@ export default class HomePage extends Component {
 
         //question what does this mean?
         if(!localStorage.getItem('token')){
-            return <Redirect to='landing'/>
+            return <Redirect to='login'/>
         }
         else{
             return (   

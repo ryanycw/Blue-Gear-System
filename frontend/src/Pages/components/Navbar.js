@@ -83,9 +83,7 @@ export default class Navbar extends Component{
                         </div>
                         <nav>
                             <ul className="primary-nav">
-                                <li><Link className="routes" id="login-btn" to="/login">Login</Link></li>
-                                <li><Link className="routes" id="register-btn" to="/register">Register</Link></li>
-                                <li><Link className="routes" id="profile-btn" to="/profile">About</Link></li>
+                                <li><Link className="routes" id="login-btn" to="/login">Alumini</Link></li>
                             </ul>
                         </nav>
                         <div id="avatar" onClick={this.accountMenuClick}>
