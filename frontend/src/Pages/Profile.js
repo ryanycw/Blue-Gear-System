@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { Form, Button, Container } from 'react-bootstrap'
+import Jdenticon from "react-jdenticon";
 const axios = require('axios')
+
 
 export default class Profile extends Component {
 
@@ -65,61 +67,48 @@ export default class Profile extends Component {
             return <Redirect to='login'/>
         }
         return (
-            <Container style={{ marginTop: '50px',}}>
-                <Form>
-                    <Form.Group controlId="formBasicUsername" style={{ width: '300px' }}>
-                        <Form.Label>Username</Form.Label>
-                        <Form.Control type="text" placeholder="懋中" name="username" value={this.state.username} onChange={this.onChange}/>
-                        <Form.Text className="text-muted">
-                            
-                        </Form.Text>
-                    </Form.Group>
-
-                    <Form.Group controlId="formBasicPassword" style={{ width: '300px' }}>
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="0000" name="password" value={this.state.password} onChange={this.onChange}/>
-                    </Form.Group>
-
-                    <Form.Group controlId="formBasicGradClass" style={{ width: '300px' }}>
-                        <Form.Label>Blue Gear Class</Form.Label>
-                        <Form.Control type="text" placeholder="第八屆" name="bgp_class" value={this.state.bgp_class} onChange={this.onChange}/>
-                    </Form.Group>
-
-                    <Form.Group controlId="formBasicGradClass" style={{ width: '300px' }}>
-                        <Form.Label>Country</Form.Label>
-                        <Form.Control type="text" placeholder="巴西" name="cur_country" value={this.state.cur_country} onChange={this.onChange}/>
-                    </Form.Group>
-
-                    <Form.Group controlId="formBasicGradClass" style={{ width: '300px' }}>
-                        <Form.Label>City</Form.Label>
-                        <Form.Control type="text" placeholder="里約" name="cur_city" value={this.state.cur_city} onChange={this.onChange}/>
-                    </Form.Group>
-
-                    <Form.Group controlId="formBasicGradClass" style={{ width: '300px' }}>
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="text" placeholder="admin@nctu.edu.tw" name="email" value={this.state.email} onChange={this.onChange}/>
-                    </Form.Group>
-
-                    <Form.Group controlId="formBasicGradClass" style={{ width: '300px' }}>
-                        <Form.Label>Phone</Form.Label>
-                        <Form.Control type="text" placeholder="+886953679988" name="mobile" value={this.state.phone} onChange={this.onChange}/>
-                    </Form.Group>
-
-                    <Form.Group controlId="formBasicGradClass" style={{ width: '300px' }}>
-                        <Form.Label>Grad. Class</Form.Label>
-                        <Form.Control type="text" placeholder="08級" name="grad_class" value={this.state.grad_class} onChange={this.onChange}/>
-                    </Form.Group>
-
-                    <Form.Group controlId="formBasicGradClass" style={{ width: '300px', marginBottom: '25px', }}>
-                        <Form.Label>Grad. Department</Form.Label>
-                        <Form.Control type="text" placeholder="醫學系" name="grad_dep" value={this.state.grad_dep} onChange={this.onChange}/>
-                    </Form.Group>
-
-                    <Button variant="primary" type="submit" onClick={this.handleSubmit}>
-                        Save Profile Information
-                    </Button>
-                </Form>
-            </Container>
+            <div className="page-container">
+                <div id="profile-image-container">
+                    <Jdenticon size="32" value={this.state.Accoutn} alt=""/>
+                    <input type="button" value="Change Icon" />
+                </div>
+                <div id="form-container">
+                    <div className="row">
+                        <div className="title">Name</div>
+                        <input type="text" onChange={this.onChange} value="name" value={this.state.name}/>
+                    </div>
+                    <div className="row">
+                        <div className="title">Email</div>
+                        <input type="text"  onChange={this.onChange} value="email" value={this.state.email}/>
+                    </div>
+                    <div className="row">
+                        <div className="title">Password</div>
+                        <input type="text"  onChange={this.onChange} value="password" value={this.state.password}/>
+                    </div>
+                    <div className="row">
+                        <div className="title">Location</div>
+                        <input type="text"  onChange={this.onChange} value="location" value={this.state.location}/>
+                    </div>
+                    <div className="row">
+                        <div className="title">Professions</div>
+                        <input type="text"  onChange={this.onChange} value="Professions" value={this.state.professions}/>
+                    </div>
+                    <div className="row">
+                        <div className="title">interest</div>
+                        <input type="text"  onChange={this.onChange} value="interest" value={this.state.interest}/>
+                    </div>
+                    <div className="row">
+                        <div className="title">website</div>
+                        <input type="text"  onChange={this.onChange} value="website" value={this.state.website}/>
+                    </div>
+                    <div className="row">
+                        <div className="title">self-intro</div>
+                        <input type="textarea"  onChange={this.onChange} value="intro" value={this.state.intro}/>
+                    </div>
+                    <input type="button" value="update change" />
+                </div>
+            </div>
         )
     }
 }
+

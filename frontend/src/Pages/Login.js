@@ -31,7 +31,7 @@ export default class Login extends Component {
         console.log(this.state.username)
         console.log(this.state.password)
         axios.post(`http://127.0.0.1:8000/authentication/api/token/`,{
-            username: this.state.username,
+            email: this.state.username,
             password: this.state.password,
         }).then((res) => {
             console.log(res)
@@ -42,8 +42,12 @@ export default class Login extends Component {
                 this.globalAccountChange(true,this.state.username)
             }
         }).catch(function (err){
-            console.log(err)
-            alert(err)
+            console.log(Object.keys(err.response.statusText))
+            for(var key in err.response){
+                var value = err[key]
+                console.log(key, value)
+            }
+            alert(err.response.statusText)
         })
         event.preventDefault();
     }

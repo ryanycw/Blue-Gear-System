@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+:root {
+  --primary-color:#05294B;
+  --primary-spacing: 2px;
+  --logo-font:Comfortaa;
+  --primary-font:Roboto;
+  --primary-btn:primary-btn;
+}
+
+html, body {
+  margin: 0;
+  font-family: Roboto;
+  letter-spacing: var(--primary-spacing);
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.primary-btn {
+  background: var(--primary-color);
+  color: white;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  padding: .4em .5em;
+  border-radius: 1em;
+  border: none;
+}
+
+.primary-btn:hover {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.hero-container {
+  height: 100vh;
+  padding: 8em 2em 2em 2em;
+  /*.button-group{
+        display: block;
+        place-content: space-between;
+        text-align: center;
+        align-self: center;
+    }*/
+}
+
+.hero-container .header {
+  text-align: center;
+}
+
+.hero-container .header .h3 {
+  display: block;
+  font-family: var(--logo-font);
+  font-size: 5em;
+  font-weight: 700;
+}
+
+.hero-container .header .p {
+  display: none;
+}
+
+.hero-container .login-btn, .hero-container .register-btn {
+  width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5em;
+}
+
+.hero-container .vertical {
+  display: none;
+}
+
+.hero-container .blue_gear {
+  width: 30em;
+  height: 30em;
+  top: 40%;
+  left: 40%;
+}
+
+.hero-container .yellow_gear {
+  display: none;
+}
+
+.hero-container .gray_gear {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .blue_gear {
+    width: 30em;
+    height: 30em;
+    top: 40%;
+    left: 70% !important;
+  }
+}
+
+.gear {
+  z-index: -1;
+  position: absolute;
+}
+/*# sourceMappingURL=RTGear.css.map */

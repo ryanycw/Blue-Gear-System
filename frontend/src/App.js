@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import Navbar from "./Pages/components/Navbar";
 import { Route, Switch, Link } from 'react-router-dom';
+import { AccountContext } from './Pages/components/context';
 
 import "./App.scss"
 import Login from './Pages/Login'
@@ -44,28 +45,39 @@ export default class App extends Component {
   }
 
   render(){
+    console.log("rerender App",this.state)
     return (
       <>
-        <Navbar accountState={this.state}/>
+        <AccountContext.Provider value={this.state}>
+          <Navbar accountState={this.state}/>
+        </AccountContext.Provider>
         <div className="body">
           <Switch>
             <Route exact path="/">
               <HomePage />  
             </Route>
             <Route path="/login">
-              <Login accountHandler={this.onAccountChange} accountState={this.state}/>
+              <AccountContext.Provider value={this.state}>
+                <Login accountHandler={this.onAccountChange} accountState={this.state}/>
+              </AccountContext.Provider>
             </Route>
             <Route path="/register">
-              <Register accountHandler={this.onAccountChange} accountState={this.state}/>
+              <AccountContext.Provider value={this.state}>
+                <Register accountHandler={this.onAccountChange} accountState={this.state}/>
+              </AccountContext.Provider>
             </Route>
             <Route path="/profile">
-              <Profile accountHandler={this.onAccountChange} accountState={this.state}/>
+              <AccountContext.Provider value={this.state}>
+                <Profile accountHandler={this.onAccountChange} accountState={this.state}/>
+              </AccountContext.Provider>
             </Route>
             <Route path="/logout">
               <Logout accountHandler={this.onAccountChange} accountState={this.state}/>
             </Route>
             <Route path="/landing">
-              <Landing/>
+              <AccountContext.Provider value={this.state}>
+                <Landing/>
+              </AccountContext.Provider>
             </Route>
             <Route component={NotFound} />
           </Switch>

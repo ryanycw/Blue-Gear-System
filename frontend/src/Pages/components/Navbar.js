@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import { Route, Switch, Link } from 'react-router-dom';
 import Jdenticon from "react-jdenticon";
+import { AccountContext } from './context';
 
 import "./css/Navbar.scss"
 import Gearlogo from "./css/img/gear_logo_blue.svg"
@@ -20,7 +21,7 @@ const MobileMenu = (props)=>{
 const AccountMenu = (props) => {
     return(props.toggle?
         <div className="accountcard">
-            <li><Link to="/logout" target="_blank" rel="noopener noreferrer" >Logout</Link></li>
+            <li><Link to="/logout">Logout</Link></li>
             <li><Link to="/profile" target="_blank" rel="noopener noreferrer" >Profile</Link></li>
         </div>
         :
@@ -29,14 +30,18 @@ const AccountMenu = (props) => {
 }
 
 export default class Navbar extends Component{
+    static contextType = AccountContext
+
     constructor(props){
         super(props)
         this.state={
             accountToggleOn:false,
             mobileToggleOn:false,
-            LoggedIn:props.accountState.LoggedIn,
-            Account:props.accountState.Account
+            //LoggedIn:props.accountState.LoggedIn,
+            //Account:props.accountState.Account
         }
+        this.accountState = (this.context)?this.context:{LoggedIn:false, Account:""}
+        console.log(this.accountState)
         this.accountMenuClick = this.accountMenuClick.bind(this)
         this.mobileMenuClick = this.mobileMenuClick.bind(this)
     }    
@@ -56,8 +61,9 @@ export default class Navbar extends Component{
     }
 
     render(){
-        console.log(this.state)
-        if (this.props.accountState.LoggedIn=="false"){
+        this.accountState = this.context
+        console.log("rerender Navbar",this.accountState)
+        if (this.accountState.LoggedIn==="false"){
             return(
                 <>
                 <div className="easy-nav-bar">
@@ -83,11 +89,14 @@ export default class Navbar extends Component{
                         </div>
                         <nav>
                             <ul className="primary-nav">
-                                <li><Link className="routes" id="login-btn" to="/login">Alumini</Link></li>
+                                <li><Link className="routes" id="login-btn" to="/fellow">Fellow</Link></li>
+                                <li><Link className="routes" id="login-btn" to="/Moments">Moments</Link></li>
+                                <li><Link className="routes" id="login-btn" to="/dashboard">On going</Link></li>
+                                <li><Link className="routes" id="login-btn" to="/books">Books</Link></li>
                             </ul>
                         </nav>
                         <div id="avatar" onClick={this.accountMenuClick}>
-                            <Jdenticon size="32" value="default" alt=""/>
+                            <Jdenticon size="32" value={this.state.Account} alt=""/>
                         </div>
                     </div>
                 </div>

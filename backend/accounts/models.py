@@ -41,7 +41,7 @@ def content_file_name(instance, filename):
 
 # Create your models here.
 class Profile(models.Model):
-    profile_photo = models.ImageField(upload_to=content_file_name, blank=True, null=True)
+    #profile_photo = models.ImageField(upload_to=content_file_name, blank=True, null=True)
     name = models.CharField(max_length = 10, null = True)
     email = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True)
     mobile = PhoneNumberField(blank = False, unique = True, null = True)
