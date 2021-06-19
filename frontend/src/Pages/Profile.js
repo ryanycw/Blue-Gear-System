@@ -11,15 +11,17 @@ export default class Profile extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          username: '',
-          password: '',
-          bgp_class: '',
-          cur_country: '',
-          cur_city: '',
-          email: '',
-          phone: '',
-          grad_class: '',
-          grad_dep: '',
+          name: 'JaneDoe',
+          password: '-',
+          bgp_class: '6',
+          cur_country: 'wonderlamd',
+          location: 'lalaland',
+          email: 'outofnowhere@gmail.com',
+          phone: '885252',
+          profession: "still searching",
+          website:"www.google.com",
+          grad_class: '-1',
+          grad_dep: 'CS',
           isSignedUp: false, // <-- initialize the signup state as false
         }
         this.accountState = this.context
