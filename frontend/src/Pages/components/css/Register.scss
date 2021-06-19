@@ -1,0 +1,52 @@
+@import './main';
+@import './Navbar';
+
+.reg-container{
+    margin:0;
+    padding:3em;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    h3{
+            font-size: 22px;
+            margin: 3em;
+    }
+    .row{
+        margin-bottom:1em;
+        label{
+            align-self: center;
+            display: block;
+            font-size: 16px;
+            margin-bottom: 0.5em;
+        }
+        input,textarea{
+            width: 80%;
+            padding: 0.8em;
+            margin-bottom: 1em;
+            border-radius: 1em;
+            border: 1px solid #ECECEC;
+            box-sizing: border-box;
+            outline: none;
+        }
+    }
+    .primary-btn{
+        margin-top:6em;
+        background: var(--primary-color);
+        color:white;
+        outline:none;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 16px;
+        padding: .4em .3em;
+        border-radius: .7em;
+        border:3px solid var(--primary-color);
+        width:30%;
+    }
+}
+
+@media only screen and (min-width:768px){
+    .reg-container{
+        padding: 3em 30% !important;
+    }
+}
+
