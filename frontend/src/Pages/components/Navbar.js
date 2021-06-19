@@ -22,7 +22,8 @@ const AccountMenu = (props) => {
     return(props.toggle?
         <div className="accountcard">
             <li><Link to="/logout">Logout</Link></li>
-            <li><Link to="/profile" target="_blank" rel="noopener noreferrer" >Profile</Link></li>
+            <li><Link to="/profile">Profile</Link></li>
+            {/*<li><Link to="/profile" target="_blank" rel="noopener noreferrer" >Profile</Link></li>*/}
         </div>
         :
         <></>
@@ -40,8 +41,7 @@ export default class Navbar extends Component{
             //LoggedIn:props.accountState.LoggedIn,
             //Account:props.accountState.Account
         }
-        this.accountState = (this.context)?this.context:{LoggedIn:false, Account:""}
-        console.log(this.accountState)
+        this.accountState = this.context
         this.accountMenuClick = this.accountMenuClick.bind(this)
         this.mobileMenuClick = this.mobileMenuClick.bind(this)
     }    
@@ -96,7 +96,7 @@ export default class Navbar extends Component{
                             </ul>
                         </nav>
                         <div id="avatar" onClick={this.accountMenuClick}>
-                            <Jdenticon size="32" value={this.state.Account} alt=""/>
+                            <Jdenticon size="32" value={this.accountState.Account} alt=""/>
                         </div>
                     </div>
                 </div>

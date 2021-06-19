@@ -1,0 +1,44 @@
+@import "./main.scss";
+.profile-page{
+    width:40%;
+    margin-left:auto;
+    margin-right:auto;
+    #profile-image-container{
+        justify-self: center;
+        text-align: center;
+        margin-bottom:3em;
+        .btn{
+            margin: 1em auto !important;
+            font-size: 1em !important;
+            text-align: center !important;
+            width:30% !important;
+        }
+    }
+    #form-container{
+        .row{
+            display:grid;
+            grid-template-columns: 30% auto;
+            align-items: center;
+        }
+        input[type=text],input[type=textarea]{
+            //width: 80%;
+            padding: 0.8em;
+            margin-bottom: 1em;
+            border-radius: .5em;
+            border: 1px solid #ECECEC;
+            box-sizing: border-box;
+            outline: none;
+        }
+        .btn-container{
+            display: flex;
+            justify-content: center;
+            .btn{
+                margin-top: 3em;
+                font-size: 1em !important;
+                width:30%;
+            }
+        }
+        
+    }
+    
+}

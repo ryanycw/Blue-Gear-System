@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { Form, Button, Container } from 'react-bootstrap'
 import Jdenticon from "react-jdenticon";
+import { AccountContext } from './components/context';
+import "./components/css/Profile.scss"
+
 const axios = require('axios')
-
-
 export default class Profile extends Component {
-
+    static contextType = AccountContext
     constructor(props) {
         super(props);
         this.state = {
@@ -20,7 +21,9 @@ export default class Profile extends Component {
           grad_class: '',
           grad_dep: '',
           isSignedUp: false, // <-- initialize the signup state as false
-        };
+        }
+        this.accountState = this.context
+        console.log(this.accountState)
         this.onChange = this.onChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -62,15 +65,25 @@ export default class Profile extends Component {
         event.preventDefault();
     }
 
+    componentDidMount(){
+        axios.get()
+    }
+
+    onChangeIconClick=()=>{
+        alert("function under construction")
+    }
+
     render() {
+        this.accountState = this.context
+        console.log("render Profile", this.accountState,this.state)
         if(!localStorage.getItem('token')){
             return <Redirect to='login'/>
         }
         return (
-            <div className="page-container">
+            <div className="page-container profile-page">
                 <div id="profile-image-container">
-                    <Jdenticon size="32" value={this.state.Accoutn} alt=""/>
-                    <input type="button" value="Change Icon" />
+                    <Jdenticon size="200" value={this.accountState.Account} alt=""/>
+                    <input className="primary-btn btn" type="button" value="Change Icon" onClick={this.onChangeIconClick}/>
                 </div>
                 <div id="form-container">
                     <div className="row">
@@ -105,7 +118,9 @@ export default class Profile extends Component {
                         <div className="title">self-intro</div>
                         <input type="textarea"  onChange={this.onChange} value="intro" value={this.state.intro}/>
                     </div>
-                    <input type="button" value="update change" />
+                    <div className="btn-container">
+                        <input className="primary-btn btn" type="button" value="update change" />
+                    </div>
                 </div>
             </div>
         )

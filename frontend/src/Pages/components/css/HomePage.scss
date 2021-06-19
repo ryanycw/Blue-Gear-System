@@ -1,0 +1,26 @@
+@import "./main.scss";
+.homapage-container{
+    height:100vh;
+    text-align: center;
+    position:relative;
+
+    .blue_gear{
+        //width: 10em;
+        //height: 10em;
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto; 
+        margin-top: auto;
+        margin-bottom: 10em;
+        width: 300px;
+    }
+    
+    .comming{
+        text-align: center;
+        font-size: 2em;
+        font-weight: 700;
+        margin-top: 6em;
+        padding:0;
+    }
+}

@@ -11,6 +11,7 @@ import HomePage from './Pages/HomePage'
 import Logout from './Pages/Logout'
 import Profile from './Pages/Profile'
 import Landing from './Pages/Landing'
+import Fellow from './Pages/Fellow'
 
 
 export default class App extends Component {
@@ -69,6 +70,11 @@ export default class App extends Component {
             <Route path="/profile">
               <AccountContext.Provider value={this.state}>
                 <Profile accountHandler={this.onAccountChange} accountState={this.state}/>
+              </AccountContext.Provider>
+            </Route>
+            <Route path="/fellow">
+              <AccountContext.Provider value={this.state}>
+                <Fellow accountHandler={this.onAccountChange} accountState={this.state}/>
               </AccountContext.Provider>
             </Route>
             <Route path="/logout">
