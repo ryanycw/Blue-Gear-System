@@ -37,6 +37,7 @@ export default class Login extends Component {
             console.log(res)
             localStorage.setItem('token', res.data.access);
             localStorage.setItem('user', res.config.data);
+            console.log(res.data.id)
             if (res.status === 200) {
                 this.setState({ isSignedUp: true }); // after signing up, set the state to true. This will trigger a re-render
                 this.globalAccountChange(true,this.state.username)
