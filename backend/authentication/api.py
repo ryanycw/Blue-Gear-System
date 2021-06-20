@@ -1,8 +1,7 @@
-from rest_framework import generics, permissions, mixins, status
+from rest_framework import generics, status
 from rest_framework.response import Response
-from .serializer import RegisterSerializer, UserSerializer
-from django.contrib.auth.models import User
-
+from rest_framework_simplejwt import views as jwt_views
+from .serializer import RegisterSerializer, UserSerializer, CustomTokenObtainPairSerializer
 
 #Register API
 class RegisterApi(generics.GenericAPIView):
@@ -24,3 +23,7 @@ class RegisterApi(generics.GenericAPIView):
         except Exception as e:
             return Response({ "message": f"{e}, Please try again",}, 
             status=status.HTTP_406_NOT_ACCEPTABLE)
+
+class LoginApi(jwt_views.TokenObtainPairView):
+    # Replace the serializer with your custom
+    serializer_class = CustomTokenObtainPairSerializer
