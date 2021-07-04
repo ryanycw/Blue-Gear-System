@@ -42,12 +42,8 @@ export default class Login extends Component {
                 this.globalAccountChange(true,this.state.username)
             }
         }).catch(function (err){
-            console.log(Object.keys(err.response.statusText))
-            for(var key in err.response){
-                var value = err[key]
-                console.log(key, value)
-            }
-            alert(err.response.statusText)
+            console.log(err)
+            alert(err)
         })
         event.preventDefault();
     }
